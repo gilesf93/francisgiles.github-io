@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timer Practice</title>
+</head>
+<body>
+  <!-- My three buttons -->
+  <input type="button" id="startTimer" value="Start Timer"><br>
+  <input type="button" id="stopTimer" value="Stop Timer"><br>
+  <input type="button" id="resetTimer" value="Reset Timer"><br>
+
+  <!-- This shows the time -->
+  <div id="time">0</div>
+
+  <script>
+    // I'm learning how to use setInterval and innerHTML :)
+    // variables
+    let seconds = 0
+    let timer = null
+
+    // get my buttons
+    let startBtn = document.getElementById("startTimer")
+    let stopBtn = document.getElementById("stopTimer")
+    let resetBtn = document.getElementById("resetTimer")
+
+    // when start is clicked
+    startBtn.addEventListener("click", function() {
+      // only start if timer not already running
+      if (timer === null) {
+        timer = setInterval(increaseTime, 1000)
+      }
+    })
+
+    // when stop is clicked
+    stopBtn.addEventListener("click", function() {
+      clearInterval(timer)
+      timer = null
+    })
+
+    // when reset is clicked
+    resetBtn.addEventListener("click", function() {
+      clearInterval(timer)
+      timer = null
+      seconds = 0
+      document.getElementById("time").innerHTML = seconds  // using innerHTML here
+    })
+
+    // function that adds 1 every second
+    function increaseTime() {
+      seconds = seconds + 1
+      // required: use innerHTML to display timer
+      document.getElementById("time").innerHTML = seconds
+    }
+  </script>
+</body>
+</html>
