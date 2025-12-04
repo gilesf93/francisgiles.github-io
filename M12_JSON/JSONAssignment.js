@@ -18,4 +18,5 @@ document.getElementById("jsonPlace").addEventListener("click", function() {
     console.log(form)
     console.log("JSON format:");
     console.log(JSON.stringify(form));
+
 });
