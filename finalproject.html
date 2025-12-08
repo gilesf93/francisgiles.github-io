@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>TaskFlow Task Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <h3>By: Francis Giles</h3>
+    <form id="taskForm">
+        <label>
+            Task Name:
+            <input type="text" id="taskName" />
+        </label>
+
+        <label>
+            Priority:
+            <select id="taskPriority">
+                <option value="High">High</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </label>
+
+        <label>
+            <input type="checkbox" id="taskImportant" />
+            Important
+        </label>
+
+        <label>
+            <input type="checkbox" id="taskCompleted" />
+            Completed
+        </label>
+
+        <button type="submit">Add Task</button>
+    </form>
+
+    <h2>Tasks</h2>
+    <div id="taskmanager"></div>
+
+    <script src="taskmanager.js"></script>
+</body>
+</html>
